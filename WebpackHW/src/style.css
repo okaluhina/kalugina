@@ -1,0 +1,13 @@
+.wrapper {
+    background-color: green;
+    height: 200px;
+    width: 250px;
+}
+
+h1 {
+    background-color: aqua;
+}
+
+input {
+    background-color: green;
+}
