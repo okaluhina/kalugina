@@ -22,6 +22,15 @@ router.route('/google/redirect')
     authController.redirect
   );
 
+  router.route('/github')
+  .get(passport.authenticate('github', { scope: ['profile', 'email'] }, { session: false }));
+
+router.route('/github/redirect')
+  .get(
+    passport.authenticate('github', { session: false }),
+    authController.redirect
+  );
+
 router.route('/secret')
   .post(
     passport.authenticate('jwt', { session: false }),

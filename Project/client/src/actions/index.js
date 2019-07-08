@@ -159,6 +159,23 @@ export const googleAuth = () => {
   }
 }
 
+export const githubAuth = () => {
+  return async (dispatch, getState) => {
+    try {
+      const response = await clients.get('/api/auth/github', {});
+      console.log(response);
+
+      dispatch({ type: SIGN_UP_CLIENT, payload: response.data.token });
+      localStorage.setItem('JWT_TOKEN', response.data.token);
+      clients.defaults.headers.common['Authorization: Bearer'] = response.data.token;
+
+      history.goBack();
+    } catch(err) {
+      console.log(err)
+    }
+  }
+}
+
 export const signUpCompany = () => {
   return {
     type: SIGN_UP_COMPANY

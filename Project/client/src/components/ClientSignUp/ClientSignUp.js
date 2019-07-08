@@ -210,6 +210,15 @@ class SignUp extends React.Component {
               <i className={classNames("fab fa-google", classes.icon)}></i>
               Google
             </Button>
+            <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            onClick={this.props.githubAuth}
+            >
+              <i className={classNames("fab fa-google", classes.icon)}></i>
+              Github
+            </Button>
           </div>
         </div>
       </Paper>

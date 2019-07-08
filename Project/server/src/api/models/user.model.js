@@ -6,7 +6,7 @@ const config = require("../config/environment");
 const userSchema = new mongoose.Schema({
   method: {
     type: String, 
-    enum: ['local', 'google', 'facebook'],
+    enum: ['local', 'google', 'facebook', 'github'],
     require: true
   },
   local: {
@@ -26,6 +26,15 @@ const userSchema = new mongoose.Schema({
     },
   },
   google: {
+    id: {
+      type: String
+    },
+    email: {
+      type: String,
+      lowercase: true
+    }
+  },
+  github: {
     id: {
       type: String
     },
