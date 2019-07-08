@@ -12,8 +12,10 @@ const config = require("./environment");
 const JWT_SECRET = config.jwt.secret;
 const GOOGLE_CLIENT_ID = config.google.id;
 const GOOGLE_CLIENT_SECRET = config.google.secret;
+const GITHUB_CLIENT_ID = config.github.id;
+const GITHUB_CLIENT_SECRET = config.github.secret;
 
-passport.use(new GoogleStrategy({
+passport.use('google', new GoogleStrategy({
     clientID: GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
     callbackURL: "/api/auth/google/redirect"
@@ -41,7 +43,7 @@ passport.use(new GoogleStrategy({
   }
 ));
 
-passport.use(new GitHubStrategy({
+passport.use('github', new GitHubStrategy({
   clientID: GITHUB_CLIENT_ID,
   clientSecret: GITHUB_CLIENT_SECRET,
   callbackURL: "/api/auth/github/redirect",

@@ -51,9 +51,9 @@ const userSchema = new mongoose.Schema({
     minlength: 6,
     maxlength: 30,
     match: /[\d]+/,
-    required: function() {
-      return !(this.local.email.length > 0)
-    }
+    // required: function() {
+    //   return !(this.local.email.length > 0)
+    // }
   },
   role: {
     type: String,

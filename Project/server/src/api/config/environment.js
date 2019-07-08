@@ -15,7 +15,9 @@ const schema = joi
     MAIL_ADDRESS: joi.string().email(),
     MAIL_SERVICE: joi.string(),
     GOOGLE_CLIENT_ID: joi.string(),
-    GOOGLE_CLIENT_SECRET: joi.string()
+    GOOGLE_CLIENT_SECRET: joi.string(),
+    GITHUB_CLIENT_ID: joi.string(),
+    GITHUB_CLIENT_SECRET: joi.string()
   })
   .unknown()
   .required();
@@ -48,5 +50,9 @@ module.exports = {
   google: {
     id: envVars.GOOGLE_CLIENT_ID,
     secret: envVars.GOOGLE_CLIENT_SECRET
+  },
+  github: {
+    id: envVars.GITHUB_CLIENT_ID,
+    secret: envVars.GITHUB_CLIENT_SECRET
   }
 };

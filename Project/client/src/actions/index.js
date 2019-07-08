@@ -148,6 +148,7 @@ export const googleAuth = () => {
     try {
       const response = await clients.get('/api/auth/google', {});
 
+      // не работает, ответ приходит на бэк
       dispatch({ type: SIGN_UP_CLIENT, payload: response.data.token });
       localStorage.setItem('JWT_TOKEN', response.data.token);
       clients.defaults.headers.common['Authorization: Bearer'] = response.data.token;

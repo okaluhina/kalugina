@@ -219,6 +219,7 @@ class SignUp extends React.Component {
               <i className={classNames("fab fa-google", classes.icon)}></i>
               Github
             </Button>
+            <a href="http://localhost:3001/api/auth/google">Google sign up</a>
           </div>
         </div>
       </Paper>
